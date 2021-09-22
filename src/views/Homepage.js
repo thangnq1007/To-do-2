@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import todosService from "../services/todosService";
 
+
 const Homepage = () => {
-  const id = 5;
-  const history = useHistory();
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -20,25 +19,19 @@ const Homepage = () => {
     fetch();
   }, []);
 
-  console.log({ todos });
-
-  const onClickBtnToDashboard = () => {
-    history.push(`/dashboard/${id}`);
-  };
-
   if (loading) {
     return "Loading...";
   }
 
   return (
     <div>
-      Homepage
+      <h1>Homepage</h1>
       {todos.map((todo) => (
         <div className="each-item">
-          <div className="each-item__id">{todo.id}</div>
-          <div className="each-item__title">
+          <span className="each-item__id">{todo.id}.</span>
+          <span className="each-item__title">
             <Link to={`/dashboard/${todo.id}`}> {todo.title}</Link>
-          </div>
+          </span>
           <hr />
         </div>
       ))}

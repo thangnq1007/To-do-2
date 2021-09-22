@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import todosService from "../services/todosService";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const params = useParams();
@@ -28,7 +29,9 @@ const Dashboard = () => {
       <div>User ID: {dataDetail?.id}</div>
       <div>ID: {dataDetail?.id}</div>
       <div>Title: {dataDetail?.title}</div>
-      <div>Completed: {dataDetail?.completed}</div>
+      <div className="each-item__title">
+            <Link to={`/`}>BackHome</Link>
+          </div>
     </div>
   );
 };
