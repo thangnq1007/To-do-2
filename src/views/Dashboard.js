@@ -31,7 +31,7 @@ const Dashboard = () => {
       <div>Title: {dataDetail?.title}</div>
       <div className="each-item__title">
             <Link to={`/`}>BackHome</Link>
-          </div>
+      </div>
     </div>
   );
 };

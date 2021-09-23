@@ -26,6 +26,7 @@ const Homepage = () => {
   return (
     <div>
       <h1>Homepage</h1>
+      <h2><Link to={`/login`}>Go to login</Link></h2>
       {todos.map((todo) => (
         <div className="each-item">
           <span className="each-item__id">{todo.id}.</span>
